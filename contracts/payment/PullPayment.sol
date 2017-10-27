@@ -32,7 +32,7 @@ contract PullPayment {
     address payee = msg.sender;
     uint256 payment = payments[payee];
 
-    require(payment != 0);
+    require(payment > 0);
     require(this.balance >= payment);
 
     totalPayments = totalPayments.sub(payment);
